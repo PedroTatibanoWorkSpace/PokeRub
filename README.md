@@ -181,14 +181,14 @@ src/
 
 ### Stack Tecnológica
 
-- **React Native 0.72.6**: Framework principal
-- **TypeScript**: Tipagem estática completa
-- **React Query**: Gerenciamento de estado servidor e cache
-- **React Navigation**: Navegação Stack + Tab
-- **AsyncStorage**: Persistência local de favoritos
-- **React Native Vector Icons**: Ícones Material Design
-- **Clean Architecture**: Separação clara de responsabilidades
-- **Repository Pattern**: Abstração da camada de dados
+- **React Native 0.80.0**: Framework principal
+- **TypeScript 5.0.4**: Tipagem estática completa
+- **React Query 5.81.2**: Gerenciamento de estado servidor e cache
+- **React Navigation 7.x**: Navegação Stack + Tab
+- **AsyncStorage 2.2.0**: Persistência local de favoritos
+- **React Native Vector Icons 10.2.0**: Ícones Material Design
+- **Zustand 5.0.6**: Estado global leve
+- **Axios 1.10.0**: Cliente HTTP
 
 ---
 
