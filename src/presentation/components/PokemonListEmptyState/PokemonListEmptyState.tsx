@@ -1,50 +1,40 @@
 import React from 'react';
-import { LoadingSpinner } from './LoadingSpinner';
-import { EmptyState } from './EmptyState';
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
+import { EmptyState } from '../EmptyState/EmptyState';
 
 interface PokemonListEmptyStateProps {
   isSearching: boolean;
   searchQuery: string;
   searchError: any;
-  hasActiveFilters: boolean;
+  hasActiveSearch?: boolean;
 }
 
 export function PokemonListEmptyState({
   isSearching,
   searchQuery,
   searchError,
-  hasActiveFilters,
+  hasActiveSearch = false,
 }: PokemonListEmptyStateProps) {
   if (isSearching) {
     return <LoadingSpinner message="Buscando pokémons..." />;
   }
 
-  if (searchQuery.length > 0) {
+  if (hasActiveSearch && searchQuery.length >= 3) {
     if (searchError) {
       return (
         <EmptyState
-          title="Pokémon não encontrado"
-          message={`"${searchQuery}" não foi encontrado. Verifique a ortografia.`}
-          emoji="❌"
+          title="Erro na busca"
+          message="Houve um problema ao buscar o pokémon. Tente novamente."
+          emoji="⚠️"
         />
       );
     }
     
     return (
       <EmptyState
-        title="Nenhum resultado"
-        message={`Não encontramos pokémons com "${searchQuery}"`}
+        title="Nenhum pokémon encontrado"
+        message={`Não encontramos nenhum pokémon com "${searchQuery}". Verifique a ortografia ou tente outro nome.`}
         emoji="🔍"
-      />
-    );
-  }
-
-  if (hasActiveFilters) {
-    return (
-      <EmptyState
-        title="Nenhum pokémon nos filtros"
-        message="Tente ajustar os filtros para ver mais resultados"
-        emoji="🎯"
       />
     );
   }
