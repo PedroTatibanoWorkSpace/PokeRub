@@ -1,0 +1,118 @@
+
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  card: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    margin: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.15,
+    shadowRadius: 16,
+    elevation: 8,
+    overflow: 'hidden',
+    position: 'relative',
+  },
+  backgroundGradient: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '60%',
+    borderRadius: 20,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 8,
+  },
+  id: {
+    fontSize: 14,
+    color: '#8E8E93',
+    fontWeight: '700',
+    letterSpacing: 0.5,
+  },
+  imageContainer: {
+    alignItems: 'center',
+    paddingVertical: 8,
+    zIndex: 1,
+  },
+  image: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+  },
+  placeholderImage: {
+    backgroundColor: '#F2F2F7',
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  placeholderText: {
+    fontSize: 40,
+    color: '#C7C7CC',
+    fontWeight: '300',
+  },
+  content: {
+    padding: 16,
+    paddingTop: 8,
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: '800',
+    color: '#1D1D1F',
+    textTransform: 'capitalize',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  typesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 6,
+    marginBottom: 12,
+    flexWrap: 'wrap',
+  },
+  statsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F8F9FA',
+    borderRadius: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+  },
+  statItem: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  statDivider: {
+    width: 1,
+    height: 24,
+    backgroundColor: '#E5E5EA',
+    marginHorizontal: 8,
+  },
+  statLabel: {
+    fontSize: 11,
+    color: '#8E8E93',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+  },
+  statValue: {
+    fontSize: 14,
+    color: '#1D1D1F',
+    fontWeight: '700',
+    marginTop: 2,
+  },
+  typeIndicator: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 4,
+  },
+});
