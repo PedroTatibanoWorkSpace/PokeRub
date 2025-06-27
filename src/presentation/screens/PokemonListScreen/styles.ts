@@ -1,0 +1,85 @@
+import { StyleSheet, Platform, StatusBar } from "react-native";
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F8F9FA',
+  },
+  safeArea: {
+    flex: 1,
+    paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 0,
+    backgroundColor: '#FFFFFF', 
+  },
+  loadingContainer: {
+    flex: 1,
+    backgroundColor: '#F8F9FA',
+    paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 0,
+  },
+  listContainer: {
+    paddingHorizontal: 16,
+    paddingTop: 0,
+    paddingBottom: 32,
+    backgroundColor: '#F8F9FA',
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    marginTop: -12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -4 },
+    shadowOpacity: 0.05,
+    shadowRadius: 16,
+    elevation: 2,
+  },
+  row: {
+    justifyContent: 'space-between',
+    marginBottom: 16,
+    paddingHorizontal: 0,
+    marginTop: 16,
+  },
+  footerLoader: {
+    height: 80,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  cardPlaceholder: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    height: 280,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
+    overflow: 'hidden',
+  },
+  placeholderAnimation: {
+    padding: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  placeholderImage: {
+    width: 100,
+    height: 100,
+    backgroundColor: '#F2F2F7',
+    borderRadius: 50,
+    marginBottom: 12,
+  },
+  placeholderText: {
+    height: 20,
+    backgroundColor: '#F2F2F7',
+    borderRadius: 4,
+    marginBottom: 8,
+    width: '70%',
+  },
+  placeholderTypes: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  placeholderType: {
+    width: 40,
+    height: 16,
+    backgroundColor: '#F2F2F7',
+    borderRadius: 8,
+  },
+});

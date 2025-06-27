@@ -36,9 +36,7 @@ export function useSearchAndFilters(pokemonList: PokemonListItem[]) {
         resultList = searchResults;
       } else {
         resultList = pokemonList.filter(pokemon =>
-          pokemon.name
-            .toLowerCase()
-            .includes(debouncedSearchQuery.toLowerCase()),
+          pokemon.name.toLowerCase().includes(debouncedSearchQuery.toLowerCase())
         );
       }
     } else {
@@ -49,7 +47,6 @@ export function useSearchAndFilters(pokemonList: PokemonListItem[]) {
   }, [pokemonList, searchResults, debouncedSearchQuery]);
 
   const hasActiveFilters = filters.types.length > 0;
-
   const clearFilters = () => setFilters(EMPTY_FILTERS);
 
   return {
