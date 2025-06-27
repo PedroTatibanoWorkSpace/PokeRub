@@ -67,7 +67,7 @@ export function AppNavigator() {
       <Stack.Screen 
         name="PokemonDetail" 
         component={PokemonDetailScreen}
-        options={{ title: 'Detalhes do Pokémon' }}
+        options={{ headerShown: false }}
       />
       <Stack.Screen 
         name="Evolution" 
