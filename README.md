@@ -5,9 +5,9 @@
 
   <h3>Uma Pokédex para teste técnico da RubPay construída com React Native</h3>
 
-![React Native](https://img.shields.io/badge/React%20Native-0.72.6-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
-![React Query](https://img.shields.io/badge/React%20Query-4.0-green)
+![React Native](https://img.shields.io/badge/React%20Native-0.80.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0.4-blue)
+![React Query](https://img.shields.io/badge/React%20Query-5.81.2-green)
 
 </div>
 
