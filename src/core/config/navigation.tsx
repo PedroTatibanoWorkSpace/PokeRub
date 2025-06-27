@@ -3,10 +3,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { PokemonListScreen } from '../../presentation/screens/PokemonListScreen';
-import { PokemonDetailScreen } from '../../presentation/screens/PokemonDetailScreen';
-import { FavoritesScreen } from '../../presentation/screens/FavoritesScreen';
-import { EvolutionScreen } from '../../presentation/screens/EvolutionScreen';
+import { PokemonListScreen } from '../../presentation/screens/PokemonListScreen/PokemonListScreen';
+import { PokemonDetailScreen } from '../../presentation/screens/PokemonDetailScreen/PokemonDetailScreen';
+import { FavoritesScreen } from '../../presentation/screens/FavoritesScreen/FavoritesScreen';
+import { EvolutionScreen } from '../../presentation/screens/EvolutionScreen/EvolutionScreen';
 
 export type RootStackParamList = {
   Main: undefined;
