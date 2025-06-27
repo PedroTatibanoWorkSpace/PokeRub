@@ -132,6 +132,21 @@ export function useAddFavorite() {
 }
 ```
 
+## 🧩 O que eu adicionaria com mais tempo
+
+- Animações mais fluidas ao navegar entre telas
+- Tela de splash inicial com loading de recursos
+- Melhor responsividade e adaptação de UI para tablets
+- Testes unitários nos repositórios e hooks principais
+- Tela de erro global com retry automático
+
+## 🛠️ O que eu faria diferente com mais tempo
+
+- Usaria Zustand ou Jotai para estado local em vez de `useState` simples
+- Criaria um Design System com componentes reutilizáveis desde o início
+- Melhoraria a separação de estilos com styled-components
+- Adicionaria testes end-to-end com Detox
+
 **Features Avançadas**:
 - Indicadores visuais de favoritos em todos os cards
 - Contadores dinâmicos na FavoritesScreen
