@@ -25,7 +25,7 @@ export function PokemonListHeader({
             <View style={styles.iconContainer}>
               <Icon name="catching-pokemon" size={28} color="#3B82F6" />
             </View>
-            <Text style={styles.title}>Pokédex</Text>
+            <Text style={styles.title}>PokéHub</Text>
           </View>
 
           <Text style={styles.subtitle}>

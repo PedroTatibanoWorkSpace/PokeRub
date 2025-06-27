@@ -45,7 +45,7 @@ function TabNavigator() {
       <Tab.Screen 
         name="PokemonList" 
         component={PokemonListScreen}
-        options={{ title: 'Pokédex' }}
+        options={{ title: 'PokéHub' }}
       />
       <Tab.Screen 
         name="Favorites" 
