@@ -62,6 +62,14 @@ export class PokeApiService {
       const pokemon = await this.getPokemonByName(query);
       return [pokemon];
     } catch {
+      if (!isNaN(Number(query))) {
+        try {
+          const pokemon = await this.getPokemonById(Number(query));
+          return [pokemon];
+        } catch {
+          return [];
+        }
+      }
       return [];
     }
   }
