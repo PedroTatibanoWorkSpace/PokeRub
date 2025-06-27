@@ -5,6 +5,7 @@ import {
   StyleSheet, 
   SafeAreaView,
   RefreshControl,
+  Text,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -54,6 +55,14 @@ export function PokemonListScreen() {
     debouncedSearchQuery,
   } = useSearchAndFilters(pokemonList);
 
+  const filteredPokemon = useMemo(() => {
+    if (!hasActiveFilters) {
+      return displayedPokemon;
+    }
+
+    return displayedPokemon;
+  }, [displayedPokemon, hasActiveFilters]);
+
   const handlePokemonPress = (pokemonId: number) => {
     navigation.navigate('PokemonDetail', { pokemonId });
   };
@@ -61,8 +70,7 @@ export function PokemonListScreen() {
   const handleLoadMore = () => {
     if (hasNextPage && 
         !isFetchingNextPage && 
-        !debouncedSearchQuery && 
-        !hasActiveFilters) { 
+        !debouncedSearchQuery) { 
       fetchNextPage();
     }
   };
@@ -87,7 +95,7 @@ export function PokemonListScreen() {
   };
 
   const renderFooter = () => {
-    if (isFetchingNextPage && !hasActiveFilters && !debouncedSearchQuery) {
+    if (isFetchingNextPage && !debouncedSearchQuery) {
       return (
         <View style={styles.footerLoader}>
           <LoadingSpinner message="Carregando mais pokémons..." />
@@ -114,7 +122,7 @@ export function PokemonListScreen() {
       />
 
       <FlatList
-        data={displayedPokemon}
+        data={filteredPokemon}
         renderItem={renderPokemonItem}
         keyExtractor={(item) => item.id.toString()}
         numColumns={2}
@@ -136,6 +144,10 @@ export function PokemonListScreen() {
             hasActiveFilters={hasActiveFilters}
           />
         }
+        removeClippedSubviews={true}
+        maxToRenderPerBatch={10}
+        windowSize={10}
+        initialNumToRender={10}
       />
 
       <FilterModal
@@ -159,27 +171,32 @@ function PokemonCardWithFilters({
 }) {
   const { data: pokemonDetails, isLoading, error } = usePokemonDetail(pokemon.id);
 
-  if (error || (!isLoading && !pokemonDetails)) {
+  if (error) {
     return null;
   }
 
   if (isLoading || !pokemonDetails) {
     return (
       <View style={styles.cardPlaceholder}>
-        <LoadingSpinner message="" />
+        <View style={styles.placeholderImage} />
+        <View style={styles.placeholderText} />
+        <View style={styles.placeholderTypes}>
+          <View style={styles.placeholderType} />
+          <View style={styles.placeholderType} />
+        </View>
       </View>
     );
   }
 
-  const passesTypeFilter = () => {
-    if (filters.types.length === 0) return true;
-    
+  if (filters.types.length > 0 && pokemonDetails) {
     const pokemonTypes = pokemonDetails.types.map(t => t.type.name);
-    return filters.types.some(filterType => pokemonTypes.includes(filterType));
-  };
+    const hasMatchingType = filters.types.some(filterType => 
+      pokemonTypes.includes(filterType)
+    );
 
-  if (!passesTypeFilter()) {
-    return null;
+    if (!hasMatchingType) {
+      return null;
+    }
   }
 
   return (
@@ -207,9 +224,39 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 16,
     margin: 8,
-    height: 240,
+    height: 260,
     flex: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  placeholderImage: {
+    width: 120,
+    height: 120,
+    backgroundColor: '#F0F0F0',
+    borderRadius: 60,
+    alignSelf: 'center',
+    marginBottom: 12,
+  },
+  placeholderText: {
+    height: 20,
+    backgroundColor: '#F0F0F0',
+    borderRadius: 4,
+    marginBottom: 8,
+    width: '70%',
+    alignSelf: 'center',
+  },
+  placeholderTypes: {
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    gap: 8,
+  },
+  placeholderType: {
+    width: 50,
+    height: 20,
+    backgroundColor: '#F0F0F0',
+    borderRadius: 10,
   },
 });

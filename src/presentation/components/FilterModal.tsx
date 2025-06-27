@@ -40,12 +40,12 @@ export function FilterModal({
     );
   };
 
-  const handleApply = () => {
-    onApplyFilters({
-      types: selectedTypes,
-    });
-    onClose();
-  };
+const handleApply = () => {
+  onApplyFilters({
+    types: selectedTypes,
+  });
+  onClose();
+};
 
   const handleClear = () => {
     setSelectedTypes([]);
