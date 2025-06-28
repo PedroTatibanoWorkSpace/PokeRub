@@ -12,8 +12,20 @@
 </div>
 
 ---
+## 📱 Capturas de Tela e Demonstração
 
-## 📱 Capturas de Tela
+### 🎥 Vídeo Demonstrativo
+
+<div align="center">
+  <a href="https://www.youtube.com/shorts/RgpaUvbVuME" target="_blank">
+    <img src="https://img.shields.io/badge/📱_Ver_Demonstração-YouTube-red?style=for-the-badge&logo=youtube" alt="Ver demonstração no YouTube" />
+  </a>
+  
+  <p><strong>🔥 Clique acima para ver o PokeRub em ação! 🔥</strong></p>
+  <p><em>Demonstração completa das funcionalidades principais em menos de 1 minuto</em></p>
+</div>
+
+---
 
 ### Screenshots do Aplicativo
 
