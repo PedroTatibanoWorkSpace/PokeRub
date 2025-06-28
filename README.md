@@ -22,7 +22,6 @@
   </a>
   
   <p><strong>🔥 Clique acima para ver o PokeRub em ação! 🔥</strong></p>
-  <p><em>Demonstração completa das funcionalidades principais em menos de 1 minuto</em></p>
 </div>
 
 ---
