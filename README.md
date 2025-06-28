@@ -282,10 +282,24 @@ export function usePokemonDetail(pokemonId: number) {
 
 ### Cores Principais
 
-- Primary: `#E53E3E` (Vermelho Pokémon)
-- Success: `#10B981` (Verde)
-- Info: `#3B82F6` (Azul)
-- Background: `#F8FAFC` (Cinza claro)
+**Sistema de Cores por Tipo de Pokémon:**
+- Fire: `#F08030` (Laranja fogo)
+- Water: `#6890F0` (Azul água)
+- Grass: `#78C850` (Verde grama)
+- Electric: `#F8D030` (Amarelo elétrico)
+- Psychic: `#F85888` (Rosa psíquico)
+- Dark: `#705848` (Marrom escuro)
+
+**Cores Gerais da Interface:**
+- Background Cards: `#FFFFFF` (Branco)
+- Background Telas: `#F5F5F5` (Cinza muito claro)
+- Texto Principal: `#000000` (Preto)
+- Texto Secundário: `#666666` (Cinza médio)
+- Sombras: `rgba(0, 0, 0, 0.1)` (Preto transparente)
+
+**Cores Específicas:**
+- Favorito Ativo: `#FF6B6B` (Vermelho coração)
+- Loading/Placeholder: `#E0E0E0` (Cinza claro)
 
 ### Componentes Principais
 
