@@ -21,7 +21,7 @@
     <img src="https://img.shields.io/badge/📱_Ver_Demonstração-YouTube-red?style=for-the-badge&logo=youtube" alt="Ver demonstração no YouTube" />
   </a>
   
-  <p><strong>🔥 Clique acima para ver o PokeRub em ação! 🔥</strong></p>
+  <p><strong> Clique acima para ver o PokeRub em ação! </strong></p>
 </div>
 
 ---
