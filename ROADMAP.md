@@ -110,24 +110,46 @@ export function EvolutionChain({
 - **Gerenciamento Completo**: Adicionar, remover individual, limpar todos
 - **Sincronização**: Estados consistentes entre todas as telas
 
+
 **Hook de Favoritos**:
 ```typescript
 export function useFavorites() {
   return useQuery({
     queryKey: [QUERY_KEYS.FAVORITES],
-    queryFn: favoritesRepository.getFavorites,
-    staleTime: Infinity
+    queryFn: () => favoriteRepository.getFavorites(),
+    staleTime: 0,
   });
 }
 
 export function useAddFavorite() {
   const queryClient = useQueryClient();
-  
+
   return useMutation({
-    mutationFn: favoritesRepository.addFavorite,
+    mutationFn: (pokemon: Pokemon) => {
+      const favorite: Favorite = {
+        id: pokemon.id,
+        name: pokemon.name,
+        imageUrl: pokemon.sprites.other['official-artwork'].front_default || 
+                  pokemon.sprites.front_default || '',
+        types: pokemon.types.map(t => t.type.name),
+        addedAt: new Date().toISOString(),
+      };
+      return favoriteRepository.addFavorite(favorite);
+    },
     onSuccess: () => {
-      queryClient.invalidateQueries([QUERY_KEYS.FAVORITES]);
-    }
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.FAVORITES] });
+    },
+  });
+}
+
+export function useRemoveFavorite() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (pokemonId: number) => favoriteRepository.removeFavorite(pokemonId),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.FAVORITES] });
+    },
   });
 }
 ```

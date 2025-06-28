@@ -187,7 +187,6 @@ src/
 - **React Navigation 7.x**: Navegação Stack + Tab
 - **AsyncStorage 2.2.0**: Persistência local de favoritos
 - **React Native Vector Icons 10.2.0**: Ícones Material Design
-- **Zustand 5.0.6**: Estado global leve
 - **Axios 1.10.0**: Cliente HTTP
 
 ---
@@ -202,6 +201,7 @@ interface IPokemonRepository {
   getPokemonById(id: number): Promise<Pokemon>;
   getPokemonByName(name: string): Promise<Pokemon>;
   searchPokemon(query: string): Promise<Pokemon[]>;
+  getPokemonSpecies(id: number): Promise<any>;
 }
 ```
 
