@@ -85,6 +85,7 @@ A PokeAPI é complexa para evoluções, exigindo requisições encadeadas:
 // Para buscar evoluções, preciso de 2 requisições encadeadas:
 // 1. pokemon-species/{id} -> evolution_chain.url  
 // 2. evolution-chain/{id} -> cadeia completa
+  ```
 
 **Frustrações**:
 - Documentação não deixa claro as relações entre entidades
