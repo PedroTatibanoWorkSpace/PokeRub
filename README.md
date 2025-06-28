@@ -1,97 +1,341 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# PokéRub - Pokédex React Native
 
-# Getting Started
+<div align="center">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" width="200" alt="Pikachu">
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+  <h3>Uma Pokédex para teste técnico da RubPay construída com React Native</h3>
 
-## Step 1: Start Metro
+![React Native](https://img.shields.io/badge/React%20Native-0.80.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0.4-blue)
+![React Query](https://img.shields.io/badge/React%20Query-5.81.2-green)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+</div>
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
+## 📱 Capturas de Tela e Demonstração
 
-```sh
-# Using npm
-npm start
+### 🎥 Vídeo Demonstrativo
 
-# OR using Yarn
-yarn start
+<div align="center">
+  <a href="https://www.youtube.com/shorts/RgpaUvbVuME" target="_blank">
+    <img src="https://img.shields.io/badge/📱_Ver_Demonstração-YouTube-red?style=for-the-badge&logo=youtube" alt="Ver demonstração no YouTube" />
+  </a>
+  
+  <p><strong>🔥 Clique acima para ver o PokeRub em ação! 🔥</strong></p>
+  <p><em>Demonstração completa das funcionalidades principais em menos de 1 minuto</em></p>
+</div>
+
+---
+
+### Screenshots do Aplicativo
+
+<div align="center">
+  <img src="./screenshots/Screenshot_1.png" width="200" alt="Tela Lista Principal" />
+  <img src="./screenshots/Screenshot_2.png" width="200" alt="Busca de Pokémons" />
+  <img src="./screenshots/Screenshot_3.png" width="200" alt="Detalhes do Pokémon" />
+  <img src="./screenshots/Screenshot_4.png" width="200" alt="Estatísticas" />
+</div>
+
+<div align="center">
+  <img src="./screenshots/Screenshot_5.png" width="200" alt="Favoritos" />
+  <img src="./screenshots/Screenshot_6.png" width="200" alt="Lista de Favoritos" />
+  <img src="./screenshots/Screenshot_7.png" width="200" alt="Cadeia Evolutiva" />
+  <img src="./screenshots/Screenshot_8.png" width="200" alt="Evolução Detalhada" />
+</div>
+
+### Tela Principal - Lista de Pokémons
+
+- Lista paginada com busca por nome/número
+- Cards elegantes com informações básicas (altura, peso, tipos)
+- Paginação infinita com scroll automático
+- Header "PokéRub" com ícone personalizado
+
+### Tela de Detalhes
+
+- Design moderno com header colorido baseado no tipo do pokémon
+- Informações completas: altura, peso, experiência base
+- Estatísticas base com barras de progresso coloridas
+- Habilidades normais e ocultas destacadas
+- Botão para visualizar linha evolutiva
+
+### Sistema de Favoritos
+
+- Adicionar/remover pokémons dos favoritos
+- Lista dedicada com contadores dinâmicos
+- Modo grid/lista para visualização flexível
+- Persistência local com AsyncStorage
+
+### Cadeia Evolutiva
+
+- Visualização completa da linha evolutiva
+- Requisitos detalhados (nível, itens, condições especiais)
+- Navegação entre evoluções
+- Botão demonstrativo de evolução
+
+---
+
+## 🎯 Exercício Escolhido
+
+**Exercício A: PokéRub** foi escolhido por representar um desafio técnico completo que abrange:
+Escolhi este exercício por várias razões estratégicas:
+
+1. **Familiaridade com Pokémon**: Como conhecedor do universo Pokémon, sabia que poderia criar uma experiência mais autêntica e detalhada
+2. **API Rica e Desafiadora**: A PokeAPI oferece dados complexos que permitem demonstrar habilidades avançadas de integração
+3. **Oportunidade de UX**: Pokémons são visuais por natureza, permitindo criar uma interface moderna e atrativa
+4. **Complexidade Técnica Ideal**: O exercício permitia implementar desde funcionalidades básicas até features avançadas como evoluções
+
+---
+
+### 🔧 Desafios Enfrentados Durante o Desenvolvimento
+
+#### 1. **PokeAPI - Complexidade Inesperada** 😅
+**Dificuldade**: ⭐⭐⭐⭐ (Difícil)
+
+A PokeAPI é complexa para evoluções, exigindo requisições encadeadas:
+
+```typescript
+// Para buscar evoluções, preciso de 2 requisições encadeadas:
+// 1. pokemon-species/{id} -> evolution_chain.url  
+// 2. evolution-chain/{id} -> cadeia completa
+  ```
+
+**Frustrações**:
+- Documentação não deixa claro as relações entre entidades
+- Algumas evoluções têm condições muito específicas (horário, felicidade, localização)
+- Múltiplas fontes de verdade para a mesma informação
+- O Metro demora muito para fazer reload durante desenvolvimento
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+```bash
+# Node.js 18+ e NPM/Yarn
+node -v          # v18.x ou superior
+npm -v           # v8.x ou superior
+
+# React Native CLI
+npm install -g @react-native-community/cli
+
+# Para Android: Android Studio com SDK Platform 33
+# Para iOS (macOS): Xcode 14+ e CocoaPods
 ```
 
-## Step 2: Build and run your app
+### Instalação
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+# Clone o repositório
+git clone <https://github.com/PedroTatibanoWorkSpace/PokeRub>
+cd PokeRub
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
+# Instale as dependências
+npm install
+ou
 yarn android
-```
 
-### iOS
+# Para iOS (apenas macOS)
+cd ios && pod install && cd ..
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+# Inicie o Metro Bundler
+npm start
+ou
+yarn start
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+# Execute no Android
+npm run android
+ou
+yarn android
 
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# Execute no iOS (terminal separado - apenas macOS)
 npm run ios
-
-# OR using Yarn
+ou
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### Comandos Úteis
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```bash
+# Resetar cache do Metro
+npx react-native start --reset-cache
 
-## Step 3: Modify your app
+# Limpar build Android
+cd android && ./gradlew clean && cd ..
 
-Now that you have successfully run the app, let's make changes!
+# Limpar cache completo
+npm cache clean --force
+rm -rf node_modules && npm install
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+---
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 🏗️ Arquitetura
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+### Clean Architecture Implementada
 
-## Congratulations! :tada:
+```
+src/
+├── presentation/       # Telas, componentes e hooks
+│   ├── screens/       # PokemonListScreen, PokemonDetailScreen, etc.
+│   ├── components/    # PokemonCard, SearchBar, etc.
+│   └── hooks/         # usePokemonList, useFavorites, etc.
+├── domain/            # Modelos e interfaces
+│   ├── models/        # Pokemon, Favorite, Evolution
+│   └── repositories/  # Interfaces dos repositórios
+├── data/              # Implementação de dados
+│   ├── datasources/   # PokeApiService
+│   └── repositories/  # PokemonRepository, FavoritesRepository
+└── core/              # Configurações e utilitários
+    ├── config/        # Navigation, QueryClient
+    └── utils/         # TypesTranslations, HelpersFunctions
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+### Stack Tecnológica
 
-### Now what?
+- **React Native 0.80.0**: Framework principal
+- **TypeScript 5.0.4**: Tipagem estática completa
+- **React Query 5.81.2**: Gerenciamento de estado servidor e cache
+- **React Navigation 7.x**: Navegação Stack + Tab
+- **AsyncStorage 2.2.0**: Persistência local de favoritos
+- **React Native Vector Icons 10.2.0**: Ícones Material Design
+- **Axios 1.10.0**: Cliente HTTP
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+---
 
-# Troubleshooting
+## 🧠 Padrões Implementados
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### Repository Pattern
 
-# Learn More
+```ts
+interface IPokemonRepository {
+  getPokemonList(limit?: number, offset?: number): Promise<PokemonListResponse>;
+  getPokemonById(id: number): Promise<Pokemon>;
+  getPokemonByName(name: string): Promise<Pokemon>;
+  searchPokemon(query: string): Promise<Pokemon[]>;
+  getPokemonSpecies(id: number): Promise<any>;
+}
+```
 
-To learn more about React Native, take a look at the following resources:
+### Custom Hooks
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+```ts
+export function usePokemonDetail(pokemonId: number) {
+  return useQuery({
+    queryKey: [QUERY_KEYS.POKEMON_DETAIL, pokemonId],
+    queryFn: () => pokemonRepository.getPokemonById(pokemonId),
+    enabled: !!pokemonId,
+    staleTime: 15 * 60 * 1000,
+  });
+}
+```
+
+### Componentização
+
+```tsx
+<PokemonCard
+  pokemon={pokemon}
+  onPress={() => handlePokemonPress(item.id)}
+  cardWidth={CARD_WIDTH}
+/>
+```
+
+---
+
+## 📝 Observações do Desenvolvimento
+
+### ✅ Histórias Implementadas
+
+**História 1: Visualização e Busca**
+
+- ✅ Lista completa de pokémons com paginação infinita
+- ✅ Busca por nome e número com debounce
+- ✅ Características: tipos, altura, peso, habilidades, stats
+
+**História 2: Sistema de Evoluções**
+
+- ✅ Visualização da cadeia evolutiva completa
+- ✅ Requisitos de evolução (nível, itens, condições)
+- ✅ Funcionalidade demonstrativa de evolução
+
+**História 3: Sistema de Favoritos**
+
+- ✅ Adicionar/remover favoritos com persistência
+- ✅ Lista dedicada com modos grid/lista
+- ✅ Sincronização entre telas
+
+### 🔧 Desafios Técnicos
+
+- **PokeAPI Complexa**: Evoluções requerem múltiplas requisições encadeadas
+- **Cache Inteligente**: Balanceamento entre performance e dados atualizados
+- **Tipagem TypeScript**: Modelagem completa das respostas da API
+- **Performance**: Paginação infinita sem travamentos
+
+### 💡 Soluções Adotadas
+
+- **React Query**: Eliminação do Redux para estado servidor
+- **Lazy Loading**: Carregamento sob demanda de detalhes
+- **Debounce Search**: Otimização de requisições de busca
+- **Memoização**: Componentes otimizados com React.memo
+
+---
+
+## 🎨 Design System
+
+### Cores Principais
+
+- Primary: `#E53E3E` (Vermelho Pokémon)
+- Success: `#10B981` (Verde)
+- Info: `#3B82F6` (Azul)
+- Background: `#F8FAFC` (Cinza claro)
+
+### Componentes Principais
+
+- **PokemonCard**: Cards com shadow e informações básicas
+- **SearchBar**: Busca com animações sutis
+- **TypeChip**: Chips coloridos por tipo de pokémon
+- **LoadingSpinner**: Estados de carregamento consistentes
+
+---
+
+## 🛠️ Estrutura de Pastas
+
+```
+src/presentation/screens/
+├── PokemonListScreen/
+│   ├── PokemonListScreen.tsx
+│   └── styles.ts
+├── PokemonDetailScreen/
+│   ├── PokemonDetailScreen.tsx
+│   └── styles.ts
+├── FavoritesScreen/
+│   ├── FavoritesScreen.tsx
+│   └── styles.ts
+└── EvolutionScreen/
+    ├── EvolutionScreen.tsx
+    └── styles.ts
+```
+
+---
+
+## 📩 Considerações Finais
+
+### ✨ Destaques do Projeto
+
+- **Arquitetura Limpa**: Separação clara de responsabilidades
+- **Performance Otimizada**: Paginação infinita e cache inteligente
+- **UX Polida**: Animações sutis e feedback visual consistente
+- **Código Limpo**: TypeScript com tipagem completa
+- **Escalabilidade**: Estrutura preparada para crescimento
+
+### 🎯 Objetivos Alcançados
+
+- ✅ Todas as 3 histórias de usuário implementadas
+- ✅ Integração completa com PokeAPI
+- ✅ Interface moderna e responsiva
+- ✅ Sistema de favoritos persistente
+- ✅ Performance otimizada para mobile
+
+---
+
+**Desenvolvido para o teste técnico RubCube**  
+**Tempo de desenvolvimento**: menos de 48 horas  
+**Status**: ✅ Completo e funcional
