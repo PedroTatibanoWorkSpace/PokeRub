@@ -87,10 +87,11 @@ Escolhi este exercício por várias razões estratégicas:
 
 ### 🔧 Desafios Enfrentados Durante o Desenvolvimento
 
-#### 1. **PokeAPI - Complexidade Inesperada** 😅
-**Dificuldade**: ⭐⭐⭐⭐ (Difícil)
+#### 1. **PokeAPI - Complexidade Inesperada** 
+**Dificuldade**: ⭐⭐⭐ (Médio)
 
 A PokeAPI é complexa para evoluções, exigindo requisições encadeadas:
+Por mais que a API seja simples, a documentação não ajuda, e as integrações parecem "ultrapassadas"
 
 ```typescript
 // Para buscar evoluções, preciso de 2 requisições encadeadas:
