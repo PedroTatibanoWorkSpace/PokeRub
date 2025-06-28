@@ -76,18 +76,15 @@ Escolhi este exercício por várias razões estratégicas:
 
 ### 🔧 Desafios Enfrentados Durante o Desenvolvimento
 
-#### 1. **PokeAPI - Complexidade Inesperada** 
-**Dificuldade**: ⭐⭐⭐ (Médio)
+#### 1. **PokeAPI - Complexidade Inesperada** 😅
+**Dificuldade**: ⭐⭐⭐⭐ (Difícil)
 
-Por mais que a PokeAPI seja rica, a documentação é muito bagunçada.
-Por PokeAPI é muito mais complexa do que aparenta inicialmente:
+A PokeAPI é complexa para evoluções, exigindo requisições encadeadas:
 
 ```typescript
-// Para buscar evoluções, preciso de 3 requisições encadeadas:
-// 1. pokemon/{id} -> species.url
-// 2. pokemon-species/{id} -> evolution_chain.url  
-// 3. evolution-chain/{id} -> cadeia completa
-```
+// Para buscar evoluções, preciso de 2 requisições encadeadas:
+// 1. pokemon-species/{id} -> evolution_chain.url  
+// 2. evolution-chain/{id} -> cadeia completa
 
 **Frustrações**:
 - Documentação não deixa claro as relações entre entidades

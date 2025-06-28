@@ -88,14 +88,15 @@ export function EvolutionChain({
   );
 }
 ```
-
 **Features Implementadas**:
 - Detecção automática de todos os tipos de requisitos (nível, itens, horário, felicidade, troca)
 - Interface visual com setas e ícones intuitivos
 - Suporte a evoluções múltiplas e ramificadas
 - Botão funcional "Evoluir Pokémon" com feedback
 
-**Desafio Técnico**: A PokeAPI requer múltiplas requisições encadeadas (species → evolution-chain → pokemon details)
+**Desafio Técnico**: A PokeAPI requer 2 requisições encadeadas:
+1. `pokemon-species/{id}` para obter a URL da cadeia evolutiva
+2. `evolution-chain/{url}` para obter a cadeia completa
 
 ---
 
