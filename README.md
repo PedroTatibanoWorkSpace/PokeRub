@@ -3,7 +3,7 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" width="200" alt="Pikachu">
 
-  <h3>Uma Pokédex para teste técnico da RubPay construída com React Native</h3>
+  <h3>Uma Pokédex construída com React Native</h3>
 
 ![React Native](https://img.shields.io/badge/React%20Native-0.80.0-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0.4-blue)
