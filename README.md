@@ -350,6 +350,5 @@ src/presentation/screens/
 
 ---
 
-**Desenvolvido para o teste técnico RubCube**  
 **Tempo de desenvolvimento**: menos de 48 horas  
 **Status**: ✅ Completo e funcional
